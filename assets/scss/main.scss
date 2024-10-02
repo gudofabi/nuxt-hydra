@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./fonts.scss";
+
+body,
+html {
+  @apply text-[16px] font-quicksand scroll-smooth transition-all ease-in-out bg-[#f4f4f4];
+}
+
+h1,
+h2,
+h3 {
+  @apply font-sf-pro;
+}
+
+.container {
+  @apply w-full md:w-[90%] xl:w-[1000px] px-5 md:px-0;
+}
+
+.kp-btn {
+  @apply relative text-gray-500 py-2 px-5 font-bold text-center cursor-pointer bg-white border-gray-500;
+  cursor: pointer;
+  border: 3px solid;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  box-shadow: 5px 5px 0 0 #6b7280;
+}
+
+/* On active press down the button */
+.kp-btn:active {
+  transform: translateY(5px);
+  box-shadow: 0 0 0 0 #6b7280;
+}
+
+/* Add the distinctive corner cuts */
+.kp-btn::before,
+.kp-btn::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  top: 0;
+  width: 10px;
+  background-color: white;
+  border-left: none;
+  border-right: none;
+  z-index: 1;
+}
+
+.kp-btn::before {
+  left: 0;
+  border-top: none;
+}
+
+.kp-btn::after {
+  right: 0;
+  border-bottom: none;
+}
+
+.kp-btn-disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+.kp-btn-primary {
+  @apply text-primary  border-primary;
+  box-shadow: 5px 5px 0 0 #0c2d57;
+  &:active {
+    transform: translateY(5px);
+    box-shadow: 0 0 0 0 #0c2d57;
+  }
+}
+
+.kp-btn-secondary {
+  @apply text-secondary  border-secondary;
+  box-shadow: 5px 5px 0 0 #fc6736;
+  &:active {
+    transform: translateY(5px);
+    box-shadow: 0 0 0 0 #fc6736;
+  }
+}
+
+.kp-input {
+  @apply border-2 border-gray-400 focus:outline-none focus:border-primary px-3 w-full h-11;
+}

@@ -1,0 +1,54 @@
+$sf-compact-font-path: "../fonts/sf-compact-display";
+$sf-display-font-path: "../fonts/sf-pro-display";
+
+@font-face {
+  src: url("#{sf-compact-font-path}/SF-Compact-Display-Light.ttg") format("ttf");
+  font-family: "SF Compact Thin";
+  font-weight: 300;
+}
+@font-face {
+  src: url("#{sf-compact-font-path}/SF-Compact-Display-Regular.ttf")
+    format("ttf");
+  font-family: "SF Compact";
+  font-weight: 400;
+}
+@font-face {
+  src: url("#{sf-compact-font-path}/SF-Compact-Display-Medium.ttg")
+    format("ttf");
+  font-family: "SF Compact Medium";
+  font-weight: 500;
+}
+@font-face {
+  src: url("#{sf-compact-font-path}/SF-Compact-Display-Bold.ttg") format("ttf");
+  font-family: "SF Compact Bold";
+  font-weight: 600;
+}
+@font-face {
+  src: url("#{sf-compact-font-path}/SF-Compact-Display-Heavy.ttg") format("ttf");
+  font-family: "SF Compact Heavy";
+  font-weight: 700;
+}
+
+@font-face {
+  src: url("#{sf-compact-font-path}/SF-Compact-Display-Black.ttg") format("ttf");
+  font-family: "SF Compact Black";
+  font-weight: 800;
+}
+
+@font-face {
+  src: url("#{sf-pro-font-path}/SFPRODISPLAYREGULAR.otf") format("otf");
+  font-family: "SF Pro";
+  font-weight: 400;
+}
+
+@font-face {
+  src: url("#{sf-pro-font-path}/SFPRODISPLAYMEDIUM.otf") format("otf");
+  font-family: "SF Pro Medium";
+  font-weight: 500;
+}
+
+@font-face {
+  src: url("#{sf-pro-font-path}/SFPRODISPLAYBOLD.otf") format("otf");
+  font-family: "SF Pro Bold";
+  font-weight: 600;
+}
