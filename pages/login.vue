@@ -10,12 +10,12 @@
         This is a sample login, we will update it later.
       </p>
       <FormInputField
-        v-model="data_form.username"
+        v-model="data_form.email"
         v-bind="{
-          placeholder: 'Username',
-          type: 'text',
+          placeholder: 'Email',
+          type: 'email',
         }"
-        :validation="$v.username"
+        :validation="$v.email"
       />
       <FormInputField
         v-model="data_form.password"
@@ -53,15 +53,15 @@ import { useVuelidate } from "@vuelidate/core";
 import { requiredMessage } from "~/utils/validators";
 
 /**** Auth Store */
-// const authStore = useAuthStore();
+const authStore = useAuthStore();
 
 const data_form = reactive({
-  username: "",
-  password: "",
+  email: "gudo@gmail.com",
+  password: "password",
 });
 
 const rules = computed(() => ({
-  username: {
+  email: {
     required: requiredMessage(),
   },
   password: {
@@ -75,8 +75,7 @@ const $v = useVuelidate(rules, data_form);
 const func_login = () => {
   $v.value.$validate();
   if (!$v.value.$error) {
-    //   authStore.login(data_form);
-    console.log(data_form);
+    authStore.login(data_form);
   }
 };
 </script>

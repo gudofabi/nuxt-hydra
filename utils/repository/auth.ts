@@ -3,10 +3,10 @@ import type { PasswordType, ProfileType } from "~/types/user";
 
 export const auth = (axios: AxiosInstance) => ({
   async login(params: any): Promise<any> {
-    return axios.post("/auth/login", params);
+    return axios.post("/api/login", params);
   },
 
   async register(params: any): Promise<any> {
-    return axios.post("/auth/register", params);
+    return axios.post("/api/register", params);
   },
 });
