@@ -16,12 +16,10 @@ export default defineNuxtConfig({
     },
   },
 
-  devServer: {
-    port: 8000,
-  },
-
   modules: ["@pinia/nuxt"],
-
+  // sanctum: {
+  //   baseUrl: "http://hydra.test/", // Laravel API
+  // },
   runtimeConfig: {
     public: {
       appTitle: process.env.VITE_APP_TITLE, // Use without VITE_ prefix
