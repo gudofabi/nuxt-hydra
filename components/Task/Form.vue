@@ -1,6 +1,8 @@
 <template>
   <div class="max-w-lg mx-auto my-10 p-5 bg-white rounded-lg shadow">
-    <div class="mb-6">
+    <h1 class="font-bold text-2xl mb-4">Task Form</h1>
+    <hr />
+    <div class="mb-6 mt-6">
       <FormInputField
         v-model="data_form.title"
         v-bind="{
@@ -42,7 +44,7 @@
 
     <button
       @click="func_createTask"
-      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+      class="text-white text-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5"
     >
       Submit
     </button>

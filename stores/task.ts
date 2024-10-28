@@ -3,9 +3,7 @@ import { defineStore } from "pinia";
 import { task } from "~/utils/repository/task";
 
 export const useTaskStore = defineStore("taskStore", () => {
-  const { $axios, $getCsrfToken } = useNuxtApp();
-  // Cast $getCsrfToken to the correct type (a function that returns a Promise)
-  const getCsrfToken = $getCsrfToken as () => Promise<void>;
+  const { $axios } = useNuxtApp();
 
   const taskRepo = task($axios as AxiosInstance);
 

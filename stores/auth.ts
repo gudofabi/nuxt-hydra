@@ -3,9 +3,9 @@ import { defineStore } from "pinia";
 import { auth } from "~/utils/repository/auth";
 
 export const useAuthStore = defineStore("authStore", () => {
-  const { $axios, $getCsrfToken, $setBearerToken } = useNuxtApp();
+  const { $axios, $setBearerToken } = useNuxtApp();
   // Cast $getCsrfToken to the correct type (a function that returns a Promise)
-  const getCsrfToken = $getCsrfToken as () => Promise<void>;
+  // const getCsrfToken = $getCsrfToken as () => Promise<void>;
   const setBearerToken = $setBearerToken as any;
   const regularRepo = auth($axios as AxiosInstance);
 
@@ -22,7 +22,7 @@ export const useAuthStore = defineStore("authStore", () => {
 
     try {
       // Ensure the CSRF token is set before making any request
-      await getCsrfToken();
+      // await getCsrfToken();
 
       // Proceed with login request
       const res = await regularRepo.login($params);
