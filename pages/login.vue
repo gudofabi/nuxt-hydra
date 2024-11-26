@@ -49,14 +49,16 @@ useHead({
   ],
 });
 
+const { login } = useSanctumAuth();
+
 import { useVuelidate } from "@vuelidate/core";
 import { requiredMessage } from "~/utils/validators";
 
 /**** Auth Store */
-const authStore = useAuthStore();
+// const authStore = useAuthStore();
 
 const data_form = reactive({
-  email: "gudo@gmail.com",
+  email: "gudo@example.com",
   password: "password",
 });
 
@@ -75,7 +77,8 @@ const $v = useVuelidate(rules, data_form);
 const func_login = () => {
   $v.value.$validate();
   if (!$v.value.$error) {
-    authStore.login(data_form);
+    // authStore.login(data_form);
+    login(data_form);
   }
 };
 </script>

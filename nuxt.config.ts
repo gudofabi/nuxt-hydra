@@ -16,14 +16,23 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@pinia/nuxt"],
-  // sanctum: {
-  //   baseUrl: "http://hydra.test/", // Laravel API
-  // },
+  modules: ["@pinia/nuxt", "nuxt-auth-sanctum"],
+ 
   runtimeConfig: {
     public: {
       appTitle: process.env.VITE_APP_TITLE, // Use without VITE_ prefix
       middlewareURL: process.env.VITE_MIDDLEWARE_URL,
+      sanctum: {
+        baseUrl: "http://localhost:8000",
+        csrf: {
+          cookie: 'XSRF-TOKEN',
+          header: 'X-XSRF-TOKEN',
+        },
+        globalMiddleware: {
+          enabled: false,
+          allow404WithoutAuth: true,
+        },
+      },
     },
   },
 });
